@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<!--
+  Andrew Gabriel, andrew_gabriel@student.uml.edu
+  COMP 4610 - 201, Assignment 8
+  This file contains the HTML for Assignment 8.
+-->
+
+<html lang="en">
+<head>
+    <title>Assignment 8</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"> </script>   <![endif]-->
+    
+    <!-- Style-sheets -->
+    <link rel="stylesheet" type="text/css" href="css/mtstyle.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    
+        <!-- The jquery-ui stylesheet is from the jQuery UI library: http://jqueryui.com/ -->
+    <link href="css/jquery-ui.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="pageTitle">
+            <h1>Multiplication Table</h1>
+        </div>
+        <div>
+            <!-- Directions -->
+            <p> This is an application to display a multiplication table. <br/>
+                Please use the sliders to control the size of the table, or input
+                values manually in the boxes. Values must be between -35 and 35. <br/>
+                Use the plus to make a new tab. You can have, at most, six tabs.
+            </p>
+            
+            
+            <!-- Tabs -->
+            <div id="myTabs"> 
+                <ul id="tabs">
+                    <li id="thisIsAnId"><a href="#tab1">1, 2, 1, 2</a></li>
+                    <li id="plusTab"><a href="#plusTabContent">+</a></li>
+                </ul>
+                
+                <ul id="plusTabContent"></ul>
+            </div>
+            
+            <input id="deleteCurrent" class="submit" type="submit" value="Delete the Current Tab"/>
+            <input id="deleteAll" class="submit" type="submit" value="Delete All Tabs"/>
+            
+            
+            <!-- Input Form -->
+            <form id="myForm" action="form_action.asp">
+                  <h2>Horizontal:</h2> <br/>
+                  
+                  First Number: <br/>
+                  <p id="x1Slider" class="mySlider"> </p>
+                  <input id="myFormInput1" type="text" name="x1" autocomplete="off" value="1" required/><br/><br/>
+                  
+                  Last Number: <br/>
+                  <p id="x2Slider" class="mySlider"> </p>
+                  <input id="myFormInput2" type="text" name="x2" min="-35" max="35" autocomplete="off" value="2" required/><br/><br/>
+                  
+                  <h2>Vertical:</h2> <br/>
+                  
+                  First Number: <br/>
+                  <p id="x3Slider" class="mySlider"> </p>
+                  <input id="myFormInput3" type="text" name="x3" min="-35" max="35" autocomplete="off" value="1" required/><br/><br/>
+                         
+                  Last Number: <br/>
+                  <p id="x4Slider" class="mySlider"> </p>
+                  <input id="myFormInput4" type="text" name="x4" min="-35" max="35" autocomplete="off" value="2" required/><br/>
+                         
+                  <label id="overflowWarning"></label>
+            </form>
+            
+            
+            <!-- Table etc. -->
+            <table id="multTable"></table>
+        </div>
+    </div>
+    
+    <!-- Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+        <!-- The jQuery validation plugin is from https://jqueryvalidation.org/ . -->
+    <script src="js/jquery.validate.js"></script>
+    
+        <!-- The jQuery ui plugin is from http://jqueryui.com/ . -->
+    <script src="js/jquery-ui.js"></script>
+    
+    <script src="js/mult-table.js"></script>
+</body>
+
+</html>
